@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'Échéancier de Crédit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur d'Échéancier de Crédit</h1>
+        <form id="credit-form">
+            <label for="amount">Montant du crédit (€):</label>
+            <input type="number" id="amount" required min="1">
+            <label for="rate">Taux d'intérêt mensuel (%):</label>
+            <input type="number" id="rate" required min="0" step="0.01">
+            <label for="months">Durée (mois):</label>
+            <input type="number" id="months" required min="1">
+            <button type="submit">Calculer l'échéancier</button>
+        </form>
+        <div id="schedule-section" style="display:none;">
+            <h2>Échéancier</h2>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Mois</th>
+                        <th>Mensualité (€)</th>
+                        <th>Parsemaine (€)</th>
+                        <th>Par jour (€)</th>
+                        <th>Intérêts (€)</th>
+                        <th>Principal (€)</th>
+                        <th>Capital restant (€)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="window.print()" id="print-btn">Imprimer l'échéancier</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
